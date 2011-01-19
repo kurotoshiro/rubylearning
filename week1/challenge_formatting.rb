@@ -16,18 +16,6 @@ def cell_size(i)
 end
 
 #
-# Create a line of the multiplication table
-#
-def line(number,nb_col,size)
-  line=''
-  nb_col.times do |i|
-    i+=1
-    line+="%#{size}d" % (number*i)
-  end
-  line+"\n"
-end
-
-#
 # Create some decoration the right size
 #
 def decoration(size,char='=')
@@ -39,6 +27,18 @@ end
 #
 def header(text,size)
   text.center(size+1)+"\n"
+end
+
+#
+# Create a line of the multiplication table
+#
+def line(number,nb_col,size)
+  line=''
+  nb_col.times do |i|
+    i+=1
+    line+="%#{size}d" % (number*i)
+  end
+  line+"\n"
 end
 
 #
@@ -65,6 +65,6 @@ end
 
 puts multiplication_table(9)
 puts
-puts multiplication_table(9,heading='Times Table to 9')
+puts multiplication_table(9,'Times Table to 9')
 puts
-puts multiplication_table(9,heading='Times Table to 9',true)
+puts multiplication_table(9,'Times Table to 9',true)
